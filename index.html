@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Geetanjali Studio MGF Gurgaon | Luxury Beauty & Grooming</title>
+  <!-- Google Fonts & simple CSS reset -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #fefaf5;
+      color: #2e241f;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    h1, h2, h3, .logo-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* header & nav */
+    header {
+      background: #ffffffdd;
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid #f0e4d8;
+      padding: 16px 0;
+    }
+
+    .nav-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .logo h1 {
+      font-size: 1.9rem;
+      font-weight: 600;
+      color: #9b6a4c;
+      line-height: 1.2;
+    }
+    .logo p {
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+      color: #7c5a44;
+      font-weight: 400;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      flex-wrap: wrap;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #3e2a21;
+      transition: 0.2s;
+      font-size: 1rem;
+    }
+    .nav-links a:hover, .nav-links a.active {
+      color: #b97f5c;
+      border-bottom: 2px solid #b97f5c;
+      padding-bottom: 4px;
+    }
+
+    /* hero section */
+    .hero {
+      background: linear-gradient(107deg, #f8ede4 0%, #f3e3d8 100%);
+      border-radius: 0 0 48px 48px;
+      padding: 64px 0 80px;
+      margin-bottom: 48px;
+    }
+    .hero-grid {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 48px;
+    }
+    .hero-text {
+      flex: 1;
+    }
+    .hero-text h2 {
+      font-size: 3.2rem;
+      font-weight: 600;
+      color: #4f2f1c;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+    .hero-text p {
+      font-size: 1.1rem;
+      color: #4c3a30;
+      margin-bottom: 24px;
+      max-width: 550px;
+    }
+    .btn {
+      display: inline-block;
+      background: #9b6a4c;
+      color: white;
+      padding: 12px 32px;
+      border-radius: 40px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.25s;
+      border: none;
+      cursor: pointer;
+      font-size: 0.95rem;
+    }
+    .btn-outline {
+      background: transparent;
+      border: 1.5px solid #9b6a4c;
+      color: #9b6a4c;
+      margin-left: 12px;
+    }
+    .btn-outline:hover {
+      background: #9b6a4c;
+      color: white;
+    }
+    .btn:hover {
+      background: #7e533b;
+      transform: translateY(-2px);
+    }
+    .hero-image {
+      flex: 1;
+      text-align: center;
+    }
+    .hero-image i {
+      font-size: 8rem;
+      color: #b87a58;
+      background: #fff3ec;
+      padding: 30px;
+      border-radius: 60px;
+      box-shadow: 0 20px 30px -12px rgba(0,0,0,0.1);
+    }
+
+    /* section general */
+    section {
+      padding: 64px 0;
+      border-bottom: 1px solid #efe3d9;
+    }
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 48px;
+      color: #4a3022;
+      position: relative;
+    }
+    .section-title:after {
+      content: '';
+      width: 70px;
+      height: 3px;
+      background: #cb9e82;
+      display: block;
+      margin: 12px auto 0;
+      border-radius: 4px;
+    }
+    .services-grid, .features-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      justify-content: center;
+    }
+    .service-card {
+      background: white;
+      border-radius: 28px;
+      padding: 32px 24px;
+      text-align: center;
+      flex: 1 1 260px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.02);
+      transition: all 0.2s ease;
+      border: 1px solid #f3e6de;
+    }
+    .service-card i {
+      font-size: 2.5rem;
+      color: #b87a58;
+      margin-bottom: 20px;
+    }
+    .service-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+    }
+    .contact-info, .address-block {
+      background: #ffffff;
+      border-radius: 32px;
+      padding: 32px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.03);
+    }
+    .contact-flex {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: space-between;
+    }
+    .contact-details i {
+      width: 36px;
+      color: #b87a58;
+    }
+    .map-placeholder {
+      background: #e7dbd1;
+      border-radius: 28px;
+      padding: 32px;
+      text-align: center;
+      color: #6b4c38;
+    }
+
+    /* legal pages */
+    .legal-content {
+      background: #fffaf7;
+      border-radius: 32px;
+      padding: 48px 40px;
+      margin: 24px 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+    }
+    .legal-content h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #4f2f1c;
+    }
+    .legal-content h3 {
+      margin: 24px 0 12px;
+      font-size: 1.4rem;
+    }
+    .legal-content p, .legal-content li {
+      margin-bottom: 16px;
+      line-height: 1.6;
+      color: #3a2a21;
+    }
+    footer {
+      background: #2b211c;
+      color: #e2cfc0;
+      padding: 48px 0 32px;
+      margin-top: 32px;
+    }
+    .footer-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 32px;
+      margin-bottom: 32px;
+    }
+    .footer-copyright {
+      text-align: center;
+      border-top: 1px solid #4d3a2e;
+      padding-top: 28px;
+      font-size: 0.85rem;
+      letter-spacing: 0.5px;
+    }
+    .footer-links a {
+      color: #decbbd;
+      text-decoration: none;
+      margin-right: 24px;
+      font-size: 0.9rem;
+    }
+    .footer-links a:hover {
+      color: white;
+    }
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 24px;
+      }
+      .hero-text h2 {
+        font-size: 2.3rem;
+      }
+      .nav-wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .nav-links {
+        gap: 18px;
+      }
+    }
+    .active-page {
+      font-weight: 700;
+      color: #b97f5c;
+      border-bottom: 2px solid #b97f5c;
+    }
+    .hidden-page {
+      display: none;
+    }
+    .page {
+      transition: 0.1s;
+    }
+    button.btn-small {
+      background: none;
+      border: none;
+      font: inherit;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container nav-wrapper">
+    <div class="logo">
+      <h1>Geetanjali Studio</h1>
+      <p>MGF Metropolitan, Gurgaon</p>
+    </div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#" data-page="home" class="nav-link active">Home</a></li>
+      <li><a href="#" data-page="contact" class="nav-link">Contact</a></li>
+      <li><a href="#" data-page="privacy" class="nav-link">Privacy Policy</a></li>
+      <li><a href="#" data-page="terms" class="nav-link">Terms & Conditions</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="app-content">
+  <!-- HOME PAGE -->
+  <div id="home-page" class="page">
+    <div class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <h2>Luxury meets artistry<br>in the heart of Gurgaon</h2>
+          <p>Geetanjali Studio MGF Gurgaon — a premium sub-brand of SOIS BELLE SALON & SPA. Experience world-class hair, skin, makeup & grooming backed by expert professionals.</p>
+          <div>
+            <a href="#" class="btn" data-page-link="contact">Book an Appointment</a>
+            <a href="#" class="btn btn-outline" data-page-link="contact">Visit Us</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <i class="fas fa-spa"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- services preview -->
+      <section>
+        <h2 class="section-title">Signature Services</h2>
+        <div class="services-grid">
+          <div class="service-card"><i class="fas fa-cut"></i><h3>Hair Styling</h3><p>Trendsetting cuts, precision styling & expert coloring.</p></div>
+          <div class="service-card"><i class="fas fa-smile"></i><h3>Skincare</h3><p>Advanced facials, brightening & anti-age treatments.</p></div>
+          <div class="service-card"><i class="fas fa-palette"></i><h3>Makeup Artistry</h3><p>Bridal, editorial & party looks by pros.</p></div>
+          <div class="service-card"><i class="fas fa-hand-sparkles"></i><h3>Spa & Grooming</h3><p>Rejuvenating massages & complete men’s grooming.</p></div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="section-title">Why Geetanjali Studio</h2>
+        <div class="features-grid">
+          <div class="service-card"><i class="fas fa-award"></i><h3>Premium Products</h3><p>L'Oréal, Schwarzkopf & luxury skincare brands.</p></div>
+          <div class="service-card"><i class="fas fa-microscope"></i><h3>Hygiene First</h3><p>Strict sanitization & disposable protocols.</p></div>
+          <div class="service-card"><i class="fas fa-user-friends"></i><h3>Expert Team</h3><p>Certified stylists & beauty therapists.</p></div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="section-title">Visit Our Studio</h2>
+        <div class="contact-flex">
+          <div class="contact-info" style="flex:1">
+            <i class="fas fa-map-marker-alt" style="font-size:1.8rem; margin-bottom:12px; color:#b87a58;"></i>
+            <h3>Address</h3>
+            <p>2ND FLOOR, SHOP NO. SF 2A, METROPOLITAN MALL, GURUGRAM, Haryana, 122002</p>
+            <p style="margin-top:16px"><i class="fas fa-phone-alt"></i> +91 9217982400</p>
+            <p><i class="fas fa-envelope"></i> aggarrwalprerak@gmail.com</p>
+            <a href="tel:9217982400" class="btn" style="margin-top:20px; display:inline-block;">Call Now</a>
+          </div>
+          <div class="map-placeholder" style="flex:1">
+            <i class="fas fa-building" style="font-size: 3rem; margin-bottom: 12px;"></i>
+            <p><strong>MGF Metropolitan Mall, 2nd Floor</strong><br>Opposite Sector 28, Gurgaon<br>Landmark: Near Central Atrium</p>
+            <small>📍 Located in the heart of the city – ample parking</small>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- CONTACT PAGE -->
+  <div id="contact-page" class="page hidden-page">
+    <div class="container" style="padding: 48px 0 80px;">
+      <div class="legal-content" style="background: #ffffff;">
+        <h2><i class="fas fa-address-card"></i> Contact & Location</h2>
+        <div style="display: flex; flex-wrap: wrap; gap: 48px; margin-top: 32px;">
+          <div style="flex: 1.2;">
+            <h3>Get in touch</h3>
+            <p><i class="fas fa-phone-alt" style="width: 32px;"></i> <strong>Phone:</strong> <a href="tel:9217982400" style="color:#9b6a4c;">+91 9217982400</a></p>
+            <p><i class="fas fa-envelope"></i> <strong>Email:</strong> aggarrwalprerak@gmail.com</p>
+            <p><i class="fas fa-clock"></i> <strong>Opening Hours:</strong> Mon-Sun: 10:00 AM – 8:30 PM</p>
+            <p><i class="fas fa-map-pin"></i> <strong>Address:</strong><br>2ND FLOOR, SHOP NO. SF 2A, METROPOLITAN MALL,<br>GURUGRAM, Haryana, 122002</p>
+            <hr style="margin: 24px 0; border-color:#ede0d6;">
+            <p><em>✨ As a sub-brand of SOIS BELLE SALON & SPA, we ensure the highest standards of luxury and personalized care.</em></p>
+          </div>
+          <div style="flex: 1; background: #f8ede6; border-radius: 28px; padding: 28px;">
+            <i class="fas fa-location-dot" style="font-size: 2rem;"></i>
+            <h3>Find us at MGF Metropolitan Mall</h3>
+            <p>Second Floor, Shop SF 2A – next to the elevator lobby. Look for the elegant Geetanjali Studio entrance.</p>
+            <div style="margin-top: 24px; background: #e5d5ca; border-radius: 24px; padding: 20px; text-align: center;">
+              <i class="fas fa-car"></i> Valet & parking available
+            </div>
+          </div>
+        </div>
+        <!-- contact form simple -->
+        <div style="margin-top: 48px;">
+          <h3>Quick Inquiry</h3>
+          <form id="quick-inquiry" style="display: flex; flex-direction: column; gap: 16px; max-width: 500px;">
+            <input type="text" placeholder="Your name" style="padding: 12px 16px; border-radius: 40px; border:1px solid #e2cfc0; background: #fff;" required>
+            <input type="email" placeholder="Email address" style="padding: 12px 16px; border-radius: 40px; border:1px solid #e2cfc0;" required>
+            <textarea rows="3" placeholder="Service interest / Message" style="border-radius: 24px; padding: 12px; border:1px solid #e2cfc0;"></textarea>
+            <button type="submit" class="btn" style="width: fit-content;">Send Message</button>
+            <p class="form-feedback" style="font-size:0.85rem; color:#5f7f5c;"></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRIVACY POLICY PAGE -->
+  <div id="privacy-page" class="page hidden-page">
+    <div class="container" style="padding: 48px 0 64px;">
+      <div class="legal-content">
+        <h2>Privacy Policy</h2>
+        <p><strong>Last updated:</strong> March 2026</p>
+        <p>At Geetanjali Studio MGF Gurgaon (operated as a sub-brand of SOIS BELLE SALON & SPA), we are committed to protecting your privacy. This policy outlines how we collect, use, and safeguard your personal information when you visit our salon or interact with our website.</p>
+        <h3>1. Information We Collect</h3>
+        <p>We may collect personal details such as your name, phone number, email address, appointment preferences, and service history to provide personalized beauty and grooming services. Payment details are processed securely via third-party gateways.</p>
+        <h3>2. How We Use Information</h3>
+        <p>To confirm appointments, communicate offers, improve our services, and ensure a premium customer experience. We never sell or rent your data to third parties.</p>
+        <h3>3. Data Security</h3>
+        <p>We adopt strict security measures, including encrypted storage and restricted access. Our salon premises also follow high hygiene & privacy standards.</p>
+        <h3>4. Cookies & Analytics</h3>
+        <p>Our website may use cookies to enhance navigation. You can adjust browser settings to decline cookies, though some features may be affected.</p>
+        <h3>5. Your Rights</h3>
+        <p>You may request access, correction, or deletion of your personal data by contacting us at aggarrwalprerak@gmail.com.</p>
+        <p>By using our services, you consent to this Privacy Policy. Updates will be posted on this page.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- TERMS & CONDITIONS PAGE -->
+  <div id="terms-page" class="page hidden-page">
+    <div class="container" style="padding: 48px 0 64px;">
+      <div class="legal-content">
+        <h2>Terms & Conditions</h2>
+        <p>Welcome to Geetanjali Studio MGF Gurgaon, a premium brand extension of SOIS BELLE SALON & SPA. By accessing our services, you agree to the following terms:</p>
+        <h3>Appointments & Cancellations</h3>
+        <p>We recommend advance booking. Cancellations made less than 4 hours before the scheduled time may incur a 30% service charge. Late arrivals may result in shortened service time.</p>
+        <h3>Service Guarantee</h3>
+        <p>Our professionals use premium products and techniques. If you are unsatisfied, please inform us within 24 hours, and we will address concerns promptly.</p>
+        <h3>Liability</h3>
+        <p>While we ensure the highest hygiene standards, clients are requested to disclose any allergies or medical conditions before treatments. Geetanjali Studio is not liable for reactions from undisclosed conditions.</p>
+        <h3>Payment & Pricing</h3>
+        <p>All prices are inclusive of applicable taxes. We accept cash, cards, and UPI. Promotional offers cannot be combined unless specified.</p>
+        <h3>Code of Conduct</h3>
+        <p>We maintain a sophisticated environment; any inappropriate behavior may lead to refusal of service. By booking, you agree to respect our staff and property.</p>
+        <p>These terms are governed by the laws of Haryana, India. For queries, contact +91 9217982400.</p>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h3 style="color:#f3dfcf;">Geetanjali Studio</h3>
+        <p style="margin-top: 12px; max-width: 260px;">Luxury grooming & beauty destination at MGF Metropolitan Mall, Gurgaon. Sub-brand of SOIS BELLE SALON & SPA.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <p><a href="#" data-page="home" class="footer-nav-link">Home</a></p>
+        <p><a href="#" data-page="contact" class="footer-nav-link">Contact</a></p>
+        <p><a href="#" data-page="privacy" class="footer-nav-link">Privacy Policy</a></p>
+        <p><a href="#" data-page="terms" class="footer-nav-link">Terms & Conditions</a></p>
+      </div>
+      <div>
+        <h4>Reach Us</h4>
+        <p><i class="fas fa-map-marker-alt"></i> SF 2A, 2nd Floor, MGF Metropolitian Mall, Gurgaon - 122002</p>
+        <p><i class="fas fa-phone"></i> 9217982400</p>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <p>© Geetanjali Studio MGF Gurgaon, Powered by SOIS BELLE SALON & SPA – All Rights Reserved.</p>
+      <p style="margin-top: 8px; font-size: 0.75rem;">Experience elegance. Redefine your beauty.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    // get pages
+    const pages = {
+      home: document.getElementById('home-page'),
+      contact: document.getElementById('contact-page'),
+      privacy: document.getElementById('privacy-page'),
+      terms: document.getElementById('terms-page')
+    };
+    
+    const navLinks = document.querySelectorAll('.nav-link');
+    const footerNavLinks = document.querySelectorAll('.footer-nav-link');
+    const dataPageLinks = document.querySelectorAll('[data-page-link]');
+    
+    function showPage(pageId) {
+      // hide all
+      Object.keys(pages).forEach(key => {
+        if(pages[key]) pages[key].classList.add('hidden-page');
+      });
+      if(pages[pageId]) {
+        pages[pageId].classList.remove('hidden-page');
+      } else {
+        pages.home.classList.remove('hidden-page');
+      }
+      // update active class on main nav
+      navLinks.forEach(link => {
+        const linkPage = link.getAttribute('data-page');
+        if(linkPage === pageId) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+      // update active styling via class active-page
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    
+    // event listeners for nav
+    navLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const pageId = link.getAttribute('data-page');
+        if(pageId) showPage(pageId);
+      });
+    });
+    
+    footerNavLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const pageId = link.getAttribute('data-page');
+        if(pageId) showPage(pageId);
+      });
+    });
+    
+    dataPageLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetPage = link.getAttribute('data-page-link');
+        if(targetPage) showPage(targetPage);
+      });
+    });
+    
+    // contact form simple demo feedback
+    const contactForm = document.getElementById('quick-inquiry');
+    if(contactForm) {
+      contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const feedback = contactForm.querySelector('.form-feedback');
+        if(feedback) feedback.innerText = '✨ Thank you! Our team will get back to you soon.';
+        contactForm.reset();
+        setTimeout(() => { if(feedback) feedback.innerText = ''; }, 4000);
+      });
+    }
+    
+    // initially show home
+    showPage('home');
+  })();
+</script>
+</body>
+</html>
